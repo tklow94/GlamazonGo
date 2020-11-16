@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
+Grocery.destroy_all
+Grocery.reset_pk_sequence
+User.destroy_all
+User.reset_pk_sequence
 
+
+User.create(first_name: 'Trevor', last_name:'Low', username:'tlow94', admin:true)
+User.create(first_name: 'Alexis', last_name:'Low', username:'beanie')
 
 file = File.read('items.json')
 data_hash = JSON.parse(file)
